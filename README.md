@@ -68,7 +68,9 @@
 
 ## 📸 Screenshots
 
-*Coming soon...*
+![Landing Page Mockup](public/images/1.png)
+
+![Landing Page Mockup](public/images/2.png)
 
 ## 📄 License
 
