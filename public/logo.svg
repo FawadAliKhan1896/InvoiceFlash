@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 120" width="100%" height="100%">
+  <defs>
+    <!-- Dynamic gradient for the "Flash" element -->
+    <linearGradient id="flashGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB800" />
+      <stop offset="100%" stop-color="#FF6B00" />
+    </linearGradient>
+    <linearGradient id="docGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F0F4F8" />
+    </linearGradient>
+  </defs>
+
+  <!-- Document Icon Background -->
+  <path d="M 30 20 L 70 20 L 90 40 L 90 100 L 30 100 Z" fill="url(#docGradient)" stroke="#1E293B" stroke-width="4" stroke-linejoin="round"/>
+  <!-- Document Fold -->
+  <path d="M 70 20 L 70 40 L 90 40" fill="#E2E8F0" stroke="#1E293B" stroke-width="4" stroke-linejoin="round"/>
+  
+  <!-- Document Lines (Spreadsheet/Invoice items) -->
+  <line x1="45" y1="50" x2="65" y2="50" stroke="#1E293B" stroke-width="4" stroke-linecap="round"/>
+  <line x1="45" y1="65" x2="55" y2="65" stroke="#1E293B" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Lightning Bolt / Flash -->
+  <path d="M 58 35 L 42 70 L 58 70 L 52 105 L 85 60 L 65 60 Z" fill="url(#flashGradient)" stroke="#FFFFFF" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Brand Typography -->
+  <text x="115" y="72" font-family="'Inter', 'Segoe UI', Roboto, Helvetica, sans-serif" font-size="48">
+    <tspan font-weight="800" fill="#1E293B">Invoice</tspan>
+    <tspan font-weight="900" font-style="italic" fill="url(#flashGradient)">Flash</tspan>
+  </text>
+
+  <!-- Tagline matching your core feature -->
+  <text x="118" y="96" font-family="'Inter', 'Segoe UI', Roboto, Helvetica, sans-serif" font-weight="600" font-size="13" fill="#64748B" letter-spacing="1.5">
+    INVOICES IN 10 SECONDS
+  </text>
+</svg>

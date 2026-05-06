@@ -1,0 +1,154 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    --color-brand: #FF6B00;
+    --color-brand-dark: #E65100;
+    --color-brand-light: #FFF4ED;
+    
+    --color-slate-50: #f8fafc;
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-600: #475569;
+    --color-slate-700: #334155;
+    --color-slate-800: #1e293b;
+    --color-slate-900: #0f172a;
+
+    --radius-xl: 1rem;
+    --radius-2xl: 1.5rem;
+    --radius-3xl: 2rem;
+}
+
+/* ====== Base Styles ====== */
+@layer base {
+    body {
+        @apply bg-slate-50 text-slate-900 antialiased;
+    }
+}
+
+/* ====== Components ====== */
+
+/* Base Button */
+@utility btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-bold rounded-xl transition-all duration-300 cursor-pointer disabled:opacity-50 active:scale-95;
+}
+
+.btn-primary {
+    @apply btn bg-brand text-white hover:bg-brand-dark shadow-lg shadow-brand/20;
+}
+
+.btn-secondary {
+    @apply btn bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:border-slate-300;
+}
+
+.btn-sm { @apply px-3.5 py-2 text-xs; }
+.btn-lg { @apply px-8 py-4 text-base; }
+
+/* Cards */
+@utility card {
+    @apply bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden;
+}
+
+.stats-card {
+    @apply card p-6 flex items-center gap-5 border-none shadow-xl shadow-slate-200/40;
+}
+
+.stats-icon {
+    @apply w-14 h-14 rounded-2xl flex items-center justify-center text-white shrink-0 shadow-lg transition-transform duration-300;
+}
+
+/* Tables */
+@utility table-container {
+    @apply card border-slate-200 shadow-xl shadow-slate-200/20 bg-white;
+}
+
+table {
+    @apply w-full text-left border-collapse;
+}
+
+thead {
+    @apply bg-slate-50/50 border-b border-slate-200;
+}
+
+th {
+    @apply px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em];
+}
+
+td {
+    @apply px-6 py-5 text-sm text-slate-700 border-b border-slate-100 transition-colors;
+}
+
+tr:last-child td {
+    @apply border-0;
+}
+
+tbody tr:hover {
+    @apply bg-slate-50/50;
+}
+
+/* Badges */
+@utility badge {
+    @apply inline-flex items-center gap-2 px-3 py-1 text-[10px] font-black uppercase tracking-widest rounded-full border shadow-sm;
+}
+.badge-primary { @apply badge bg-brand-light text-brand border-brand/10; }
+.badge-success { @apply badge bg-emerald-50 text-emerald-700 border-emerald-100; }
+.badge-warning { @apply badge bg-amber-50 text-amber-700 border-amber-100; }
+.badge-danger { @apply badge bg-red-50 text-red-700 border-red-100; }
+.badge-neutral { @apply badge bg-slate-50 text-slate-600 border-slate-200; }
+
+/* Status Dots */
+@utility status-dot { @apply w-2.5 h-2.5 rounded-full ring-2 ring-white; }
+.status-dot-paid { @apply status-dot bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]; }
+.status-dot-pending { @apply status-dot bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.5)]; }
+.status-dot-overdue { @apply status-dot bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.5)]; }
+.status-dot-draft { @apply status-dot bg-slate-400; }
+
+/* Sidebar */
+.sidebar {
+    @apply fixed inset-y-0 left-0 w-64 bg-slate-900 text-white z-50 flex flex-col shadow-2xl;
+}
+
+.sidebar-link {
+    @apply flex items-center gap-3 px-4 py-3 text-sm font-medium text-slate-400 rounded-xl mx-3 my-1 hover:bg-white/5 hover:text-white transition-all;
+}
+
+.sidebar-link i {
+    @apply w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity;
+}
+
+.sidebar-link.active {
+    @apply bg-brand text-white shadow-lg shadow-brand/20 font-bold;
+}
+
+.sidebar-link.active i {
+    @apply opacity-100;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Custom Utilities */
+.glass {
+    @apply bg-white/80 backdrop-blur-md;
+}
+
+@media print {
+    .no-print { display: none !important; }
+}

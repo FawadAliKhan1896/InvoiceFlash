@@ -34,7 +34,7 @@
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/FawadAliKhan1896/InvoiceFlash.git
+   git clone https://github.com/yourusername/invoiceflash.git
    cd invoiceflash
    ```
 
